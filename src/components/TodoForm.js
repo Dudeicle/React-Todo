@@ -23,6 +23,12 @@ class TodoForm extends React.Component {
         });
     };
 
+    clearCompleted = () => {
+        this.props.clearEntries();
+    };
+
+
+
     render (){
         return (
             <form onSubmit={this.handleSubmit}>
@@ -34,6 +40,10 @@ class TodoForm extends React.Component {
                 />
                 
                 <button>Add Item!</button>
+
+                <button className="clear-btn" onClick={this.clearCompleted}>
+                Clear Completed Items!
+                </button>
             </form>
         );
     }
